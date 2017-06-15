@@ -14,6 +14,8 @@ namespace ComicBookGallery.Models
         public Artist[] Artists { get; set; }
         public bool Favorite { get; set; }
 
+        public string DisplayText => $"{SeriesTitle} #{IssueNumber}";
 
+        public string ConverImageFileName => $"{SeriesTitle.Replace(" ", "-").ToLower()}-{IssueNumber}.jpg";
     }
 }
