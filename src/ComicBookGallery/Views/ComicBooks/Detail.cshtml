@@ -19,7 +19,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>Comic Book Library</title>
 </head>
 <body>
     <div>
@@ -29,10 +29,20 @@
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
 
-        <h5>Artists:</h5>
-        <div>@artists</div>
-
-
+        @if (artists.Length > 0)
+        {
+            <h5>Artists:</h5>
+            <div>
+                <ul>
+                    @foreach (var artist in artists)
+                    {
+                        <li>
+                            <text>* @artist</text>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
     </div>
 </body>
 </html>
